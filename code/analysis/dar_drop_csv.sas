@@ -14,7 +14,7 @@
 ********************************************************************;
 
 %include "C:/Users/ritzs/OneDrive/Desktop/zEstimands/main/code/analysis_setup.sas";
-%let scenario = dar_drop;  /*SAMPLE SIZE needs to be mentioned for each scenario (100, 200, 400)*/
+%let scenario = dar_drop;  /*scenario needs to be changed for each scenario (100, 200, 400)*/
 
 *** SET UP FILE NAME TO THE CSV AND LIBRARY FOR STORING SAS DATA ***;
 filename csv0 "C:/Users/ritzs/OneDrive/Desktop/zEstimands/main/data/&scenario._true.csv";      /*TRUE DATASET*/
