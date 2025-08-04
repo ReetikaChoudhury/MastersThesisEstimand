@@ -36,7 +36,7 @@
 *** SET UP ENVIRONMENT                                           ***;
 ********************************************************************;
 
-%let scenario = dar_drop; /*SAMPLE SIZE needs to be changed*/
+%let scenario = dar_drop; /*scenario needs to be changed*/
 %let part     = 1;
 %include "C:/Users/ritzs/OneDrive/Desktop/zEstimands/main/code/analysis_setup.sas";
 %include "C:/Users/ritzs/OneDrive/Desktop/zEstimands/main/code/rbi_tools.sas";
