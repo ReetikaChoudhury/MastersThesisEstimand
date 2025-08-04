@@ -14,7 +14,7 @@
 ********************************************************************;
 
 %include "C:/Users/ritzs/OneDrive/Desktop/zEstimands/main/code/analysis_setup.sas";
-%let scenario = dar_drop; /*SAMPLE SIZE needs to be changed*/
+%let scenario = dar_drop; /*scenario needs to be changed*/
 
 
 ********************************************************************;
