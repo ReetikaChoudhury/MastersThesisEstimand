@@ -124,7 +124,6 @@ data lsm_metrics;
   lsm_policy_mse  = lsm_policy_se**2 + lsm_policy_bias**2;              *** MEAN SQUARE ERROR ***;
   lsm_policy_hw   = (lsm_policy_upper - lsm_policy_lower) / 2;          *** HALFWIDTH OF POLICY LSM ESTIMATES ***;
   lsm_policy_cic  = lsm_policy_lower < lsm_true_est < lsm_policy_upper; *** CI COVERAGE INDICATOR ***;
-
 run;
 
 proc sort data = lsm_metrics;
@@ -147,9 +146,6 @@ data dif_metrics;
   dif_policy_mse   = dif_policy_se**2 + dif_policy_bias**2;              *** ROOT MEAN SQUARE ERROR ***;
   dif_policy_hw    = (dif_policy_upper - dif_policy_lower) / 2;          *** HALFWIDTH OF POLICY DIF ESTIMATES ***;
   dif_policy_cic   = dif_policy_lower < dif_true_est < dif_policy_upper; *** CI COVERAGE INDICATOR ***;
-  dif_policy_pwr   = dif_policy_upper < 0;                               *** BASIC SUPERIORITY IF UPPER LESS THAN ZERO ***;
-  dif_policy_pwr2  = dif_policy_upper < -0.25;                            *** BASIC SUPERIORITY IF UPPER LESS THAN MINUS 0.5 ***;  
-
 run;
 
 proc sort data = dif_all;
@@ -277,33 +273,25 @@ data results.&scenario._summary_dif_all;
          visitn                   label = "Visit (N)"
          methodn                  label = "Estimation Method (N)"	 
          method                   label = "Estimation Method"	 
-         dif_policy_est_sd		  label = "SD of Treamtent Effect Estimate"
-         dif_policy_se_mean	      label = "Mean of Treamtent Effect SE"
-         dif_policy_bias_n		  label = "Treamtent Effect Bias - N"
+         dif_policy_est_sd	  label = "SD of Treamtent Effect Estimate"
+         dif_policy_se_mean	  label = "Mean of Treamtent Effect SE"
+         dif_policy_bias_n	  label = "Treamtent Effect Bias - N"
          dif_policy_bias_mean     label = "Treamtent Effect Bias - Mean"
          dif_policy_bias_lclm	  label = "Treamtent Effect Bias - Lower"	  
          dif_policy_bias_uclm     label = "Treamtent Effect Bias - Upper"
-         dif_policy_cic_n		  label = "Treamtent Effect Coverage - N"
+         dif_policy_cic_n	  label = "Treamtent Effect Coverage - N"
          dif_policy_cic_mean      label = "Treamtent Effect Coverage - Mean"
          dif_policy_cic_lclm      label = "Treamtent Effect Coverage - Lower"
          dif_policy_cic_uclm      label = "Treamtent Effect Coverage - Upper"
-         dif_policy_hw_n		  label = "Treamtent Effect Halfwidth - N"
-         dif_policy_hw_mean		  label = "Treamtent Effect Halfwidth - Mean"
-         dif_policy_hw_lclm		  label = "Treamtent Effect Halfwidth - Lower"
-         dif_policy_hw_uclm		  label = "Treamtent Effect Halfwidth - Upper"
-         dif_policy_mse_n	      label = "Treamtent Effect Mean Square Error - N"
+         dif_policy_hw_n	  label = "Treamtent Effect Halfwidth - N"
+         dif_policy_hw_mean	  label = "Treamtent Effect Halfwidth - Mean"
+         dif_policy_hw_lclm	  label = "Treamtent Effect Halfwidth - Lower"
+         dif_policy_hw_uclm	  label = "Treamtent Effect Halfwidth - Upper"
+         dif_policy_mse_n	  label = "Treamtent Effect Mean Square Error - N"
          dif_policy_mse_mean	  label = "Treamtent Effect Mean Square Error - Mean"
          dif_policy_mse_lclm	  label = "Treamtent Effect Mean Square Error - Lower"
          dif_policy_mse_uclm	  label = "Treamtent Effect Mean Square Error - Upper"
-         dif_policy_rmse_mean     label = "Treamtent Effect Root of Mean Square Error - Mean"
-         dif_policy_pwr_n	      label = "Treamtent Effect Basic Superiority Power - N"
-         dif_policy_pwr_mean	  label = "Treamtent Effect Basic Superiority Power - Mean"
-         dif_policy_pwr_lclm	  label = "Treamtent Effect Basic Superiority Power - Lower"
-         dif_policy_pwr_uclm	  label = "Treamtent Effect Basic Superiority Power - Upper"
-         dif_policy_pwr_n	      label = "Treamtent Effect Super Superiority Power - N"
-         dif_policy_pwr_mean	  label = "Treamtent Effect Super Superiority Power - Mean"
-         dif_policy_pwr_lclm	  label = "Treamtent Effect Super Superiority Power - Lower"
-         dif_policy_pwr_uclm	  label = "Treamtent Effect Super Superiority Power - Upper";
+         dif_policy_rmse_mean     label = "Treamtent Effect Root of Mean Square Error - Mean";
   set dif_summary;
 run;
 
