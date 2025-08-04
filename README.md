@@ -1,4 +1,5 @@
-# Estimand
+# Estimand Framework
+# Treatment Policy Strategy
 This repository contains the codes used for Biostatistics Master's Thesis which was used to evaluate anf compare 3 different multiple imputation methods - Standard MI, Retrieved Dropout MI and Reference-based MI in longitudinal clinical trials based on treatment policy strategy in Estimand Framework. The simulated datasets are created using R Version 4.5.1.
 The simulation codes are contained in the file Estimand/code/simulation and the user-defined functions to be used for simulation are in the file Estimand/code/functions
 
