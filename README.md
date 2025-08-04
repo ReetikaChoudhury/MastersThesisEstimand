@@ -1,7 +1,8 @@
 # Estimand Framework
 # Treatment Policy Strategy
 This repository contains the codes used for Biostatistics Master's Thesis which was used to evaluate anf compare 3 different multiple imputation methods - Standard MI, Retrieved Dropout MI and Reference-based MI in longitudinal clinical trials based on treatment policy strategy in Estimand Framework. The simulated datasets are created using R Version 4.5.1.
-The simulation codes are contained in the file Estimand/code/simulation and the user-defined functions to be used for simulation are in the file Estimand/code/functions
+
+The clinical trial chosen for the simulation of data is the PIONEER 1 trial on type 2 diabetes patients who are randomized into treatment arm and control arm in 1:1 ratio. The simulation codes are contained in the file Estimand/code/simulation and the user-defined functions to be used for simulation are in the file Estimand/code/functions
 
 For analysis, SAS Version 9.4 (SAS/STAT 15.3) was used to perform the different MI methods. The codes must be run in the following sequence:-
 1. analysis_setup.sas
@@ -24,3 +25,5 @@ For analysis, SAS Version 9.4 (SAS/STAT 15.3) was used to perform the different 
 18. dar_drop_jtr_part2.sas
 19. dar_drop_summary_all.sas
 20. analysis_plots_all.sas
+
+The codes are referred from the https://github.com/EIWG-Estimation/TPE-Sim1.git github library. All credits and rights belong to EIWG Estimation sub-team. 
